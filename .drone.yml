@@ -6,7 +6,7 @@ steps:
   - name: cleanup
     image: docker
     commands:
-      - docker system prune -f
+      - docker system prune --volumes -f -a
     volumes:
       - name: docker1
         path: /var/run/docker.sock
