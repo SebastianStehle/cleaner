@@ -7,8 +7,9 @@ steps:
     image: docker
     commands:
       - docker system prune --volumes -f -a
-      - docker pull mcr.microsoft.com/dotnet/core/sdk:3.1-buster
-      - docker pull mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim
+      - docker mcr.microsoft.com/dotnet/aspnet:5.0.0-buster-slim
+      - docker mcr.microsoft.com/dotnet/sdk:5.0.102-ca-patch-buster-slim
+      - docker buildkite/puppeteer:5.2.1
     volumes:
       - name: docker1
         path: /var/run/docker.sock
